@@ -68,7 +68,7 @@ const Dashboard = () => {
           <div>
             <h1 className="text-3xl font-bold">EDA Dashboard</h1>
             <p className="text-muted-foreground mt-1">
-              Exploring housing_data.csv • Uploaded 2 minutes ago
+              Ready to analyze your data • Select a file to get started
             </p>
           </div>
           <div className="flex items-center space-x-2">
