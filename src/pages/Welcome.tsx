@@ -1,10 +1,24 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowRight, BarChart3, FileSpreadsheet, TrendingUp, Users } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
+import { useEffect } from "react";
+import { useToast } from "@/hooks/use-toast";
 import heroImage from "@/assets/hero-image.jpg";
 
 const Welcome = () => {
+  const [searchParams] = useSearchParams();
+  const { toast } = useToast();
+
+  useEffect(() => {
+    if (searchParams.get('message') === 'account-created') {
+      toast({
+        title: "Account created successfully!",
+        description: "Please sign in with your new credentials to get started.",
+        duration: 5000,
+      });
+    }
+  }, [searchParams, toast]);
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-accent/20 to-primary/10">
       {/* Navigation */}
